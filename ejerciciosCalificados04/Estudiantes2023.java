@@ -63,9 +63,9 @@ public class Estudiantes2023 {
     // M�todos para manipular el archivo de texto
     private void cargarArchivo() {
         try {
-            File file = new File("./src/estudiantes.txt");
+            File file = new File("C:\\Users\\ALFONSO BARRENECHEA\\Desktop\\PROGRAMACIÓN ORIENTADA A OBJETOS - I\\semana 11\\TRABAJO 2\\LAB009POOI-2311685\\ejerciciosCalificados04\\estudiantes.txt");
             Class<Estudiantes2023> clazz = Estudiantes2023.class;
-            InputStream inputStream = clazz.getResourceAsStream("/estudiantes.txt");
+            InputStream inputStream = clazz.getResourceAsStream("estudiantes.txt");
             if (file.exists()) {
                 readFromInputStream(inputStream);
             } else
