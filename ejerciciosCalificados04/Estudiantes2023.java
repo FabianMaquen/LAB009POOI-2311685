@@ -14,10 +14,12 @@ public class Estudiantes2023 {
 
     public void adicionar(Estudiante estudiante) {
         estudiantes.add(estudiante);
+        guardarArchivo();
     }
 
     public void eliminar(Estudiante estudiante) {
         estudiantes.remove(estudiante);
+        guardarArchivo();
     }
 
     public Estudiante obtener(int pos) {
@@ -97,6 +99,7 @@ public class Estudiantes2023 {
             JOptionPane.showMessageDialog(null, "Se produjo un error= " + x);
         }
     }
+<<<<<<< HEAD
     public void modificarApellidos() {
     for (Estudiante estudiante : estudiantes) {
         String nombreCompleto = estudiante.getNombre();
@@ -116,3 +119,25 @@ public class Estudiantes2023 {
 }
 
 
+=======
+
+    private void guardarArchivo() {
+        try {
+            FileWriter fileWriter = new FileWriter("C:\\Users\\ALFONSO BARRENECHEA\\Desktop\\PROGRAMACIÓN ORIENTADA A OBJETOS - I\\semana 11\\TRABAJO 2\\LAB009POOI-2311685\\ejerciciosCalificados04\\estudiantes.txt");
+            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+    
+            for (Estudiante estudiante : estudiantes) {
+                String linea = estudiante.getCodigo() + "," + estudiante.getNombre() + "," + estudiante.getCiclo() + "," + estudiante.getPension();
+                bufferedWriter.write(linea);
+                bufferedWriter.newLine();
+            }
+    
+            bufferedWriter.close();
+            fileWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Error al guardar el archivo estudiantes.txt");
+        }
+    }
+}
+>>>>>>> 471c39b31055dc24abe2d5865fcaef0e6efd6ae4
