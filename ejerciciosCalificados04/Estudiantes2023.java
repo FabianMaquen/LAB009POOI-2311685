@@ -21,52 +21,21 @@ public class Estudiantes2023 {
     }
 
     public Estudiante obtener(int pos) {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        for (Estudiante estudiante : estudiantes) {
-            return estudiantes.get(pos);
-        }        
-=======
-        estudiantes.get(pos);
->>>>>>> 9835f4309d46f5c65d8bab36a46cc05f40e98165
-=======
         if(pos >= 0 && pos < estudiantes.size()){
             return estudiantes.get(pos);
         }
->>>>>>> 115ae9169beecc019936caf6a0dffbe1740f2ffa
         return null;
     }
 
     public Estudiante buscar(int codigo) {
         for (Estudiante estudiante : estudiantes) {
-<<<<<<< HEAD
-            if(estudiante.getCodigo() == codigo){
-=======
             if (estudiante.getCodigo() == codigo) {
->>>>>>> 9835f4309d46f5c65d8bab36a46cc05f40e98165
                 return estudiante;
             }
         }
         return null;
     }
 
-<<<<<<< HEAD
-    public int tamano() {
-<<<<<<< HEAD
-        estudiantes.size();        
-=======
-        //Introduce codigog   
->>>>>>> 9835f4309d46f5c65d8bab36a46cc05f40e98165
-	    return 0;
-    }
-
-    public void listarEstudiantes(){
-<<<<<<< HEAD
-        //Introduce c digo        
-=======
-        //Introduce codigo        
->>>>>>> 9835f4309d46f5c65d8bab36a46cc05f40e98165
-=======
     public int tamano() { 
 	    return estudiantes.size();
     }
@@ -75,10 +44,8 @@ public class Estudiantes2023 {
         for (Estudiante estudiante : estudiantes) {
             System.out.printf("%-30d%-30s%-10d%.2f%n", estudiante.getCodigo(), estudiante.getNombre(), estudiante.getCiclo(), estudiante.getPension());
         }
->>>>>>> 115ae9169beecc019936caf6a0dffbe1740f2ffa
     }
     
-
     // M todos para manipular el archivo de texto
     private void readFromInputStream(InputStream inputStream) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(inputStream));
@@ -103,11 +70,7 @@ public class Estudiantes2023 {
     // M todos para manipular el archivo de texto
     private void cargarArchivo() {
         try {
-<<<<<<< HEAD
-            File file = new File("C:\\TRABAJO GRUPAL\\TRABAJO GRUPAL2\\LAB009POOI-2311685\\ejerciciosCalificados04\\estudiantes.txt");
-=======
-            File file = new File("C:\\Users\\Fabian Maquen\\Desktop\\CICLO 02\\POO\\Actividades\\S11\\LAB009POOI-2311685\\ejerciciosCalificados04\\estudiantes.txt");
->>>>>>> 9835f4309d46f5c65d8bab36a46cc05f40e98165
+            File file = new File("C:\\Users\\ALFONSO BARRENECHEA\\Desktop\\PROGRAMACIÓN ORIENTADA A OBJETOS - I\\semana 11\\TRABAJO 2\\LAB009POOI-2311685\\ejerciciosCalificados04\\estudiantes.txt");
             Class<Estudiantes2023> clazz = Estudiantes2023.class;
             InputStream inputStream = clazz.getResourceAsStream("estudiantes.txt");
             if (file.exists()) {
