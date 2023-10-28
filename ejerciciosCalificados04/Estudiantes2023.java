@@ -26,16 +26,21 @@ public class Estudiantes2023 {
     }
 
     public Estudiante buscar(int codigo) {
+        for (Estudiante estudiante : estudiantes) {
+            if (estudiante.getCodigo() == codigo) {
+                return estudiante;
+            }
+        }
         return null;
     }
 
     public int tamano() {
-        estudiantes.size();        
+        //Introduce codigog   
 	    return 0;
     }
 
     public void listarEstudiantes(){
-        //Introduce c digo        
+        //Introduce codigo        
     }
 
     // M todos para manipular el archivo de texto
@@ -62,7 +67,7 @@ public class Estudiantes2023 {
     // M todos para manipular el archivo de texto
     private void cargarArchivo() {
         try {
-            File file = new File("C:\\Users\\ALFONSO BARRENECHEA\\Desktop\\PROGRAMACIÓN ORIENTADA A OBJETOS - I\\semana 11\\TRABAJO 2\\LAB009POOI-2311685\\ejerciciosCalificados04\\estudiantes.txt");
+            File file = new File("C:\\Users\\Fabian Maquen\\Desktop\\CICLO 02\\POO\\Actividades\\S11\\LAB009POOI-2311685\\ejerciciosCalificados04\\estudiantes.txt");
             Class<Estudiantes2023> clazz = Estudiantes2023.class;
             InputStream inputStream = clazz.getResourceAsStream("estudiantes.txt");
             if (file.exists()) {
