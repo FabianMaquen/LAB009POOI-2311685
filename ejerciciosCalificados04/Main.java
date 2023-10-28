@@ -37,15 +37,71 @@ public class Main {
                         break;
 
                     case 2: 
+                    Scanner sc = new Scanner(System.in);
+
+                    	System.out.println("** BUSCAR A UN ESTUDIANTE ****");
+                    	System.out.println("PUEDE BUSCAR POR NOMBRE O CODIGO. ELEGIR UNA OPCIÓN:");
+                    	System.out.println("A – APELLIDO");
+                    	System.out.println("B – CODIGO");
+
+                    	char opcion = sc.nextLine().charAt(0);
+
+                    	if (opcion == 'A') {
+                    	    System.out.println("INGRESE EL APELLIDO DEL ALUMNO:");
+                    	    String nombre = sc.nextLine();
+                    	    
+                    	    Estudiante estudianteEncontrado = estudiantes.buscarNombre(nombre);
+                            
+                            if (estudianteEncontrado != null) {
+                                System.out.println("El alumno es: " + estudianteEncontrado.getNombre());
+                            } else {
+                                System.out.println("El alumno no está registrado.");
+                            }
+                    	 
+
+                    	} else if (opcion == 'B') {
+                    	    System.out.println("INGRESE EL CÓDIGO DEL ALUMNO:");
+
+                    	    try {
+                    	        int codigo = Integer.parseInt(sc.nextLine());
+
+                    	        Estudiante estudianteEncontrado = estudiantes.buscar(codigo);
+
+                    	        if (estudianteEncontrado != null) {
+                    	            System.out.println("El alumno es: " + estudianteEncontrado.getNombre() + " " + estudianteEncontrado.getCodigo());
+                    	        } else {
+                    	            System.out.println("El alumno no está registrado.");
+                    	        }
+                    	    } catch (NumberFormatException e) {
+                    	        System.out.println("Error con el codigo del alumno: " + e.getMessage());
+                    	    }
+                    	} else {
+                    	    System.out.println("Opción no válida.");
+                    	}
+                    
                         break;
 
                     case 3: 
                         break;
 
                     case 4: 
+                    
                         break;
 
                     case 5: 
+                    System.out.println("-----------------------------------------------------------------------------------");
+                    System.out.printf("%-30s%-30s%-10s%s%n", "CODIGO DE ESTUDIANTE", "NOMBRE Y APELLIDO", "CICLO", "PENSION");
+                    System.out.println("-----------------------------------------------------------------------------------");
+                    estudiantes.listarEstudiantes();
+                    System.out.println("-----------------------------------------------------------------------------------");
+                    
+                    estudiantes.modificarApellidos();
+                    System.out.println("LA NUEVA LISTA:");
+                    System.out.println("-----------------------------------------------------------------------------------");
+                    System.out.printf("%-30s%-30s%-10s%s%n", "CODIGO DE ESTUDIANTE", "NOMBRE Y APELLIDO", "CICLO", "PENSION");
+                    System.out.println("-----------------------------------------------------------------------------------");
+                    estudiantes.listarEstudiantes();
+                    System.out.println("-----------------------------------------------------------------------------------");
                         break;
 
                     case 6:
