@@ -70,7 +70,7 @@ public class Main {
                         
                         break;
 
-                    case 2: 
+                    case 2:
                         break;
 
                     case 3: 
@@ -96,7 +96,7 @@ public class Main {
                     case 8: 
                         break;
 
-                    case 9: 
+                    case 9:
                         break;
 
                     default:
