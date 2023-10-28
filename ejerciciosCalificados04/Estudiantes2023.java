@@ -13,33 +13,39 @@ public class Estudiantes2023 {
     }
 
     public void adicionar(Estudiante estudiante) {
-        //Introduce c�digo
+        estudiantes.add(estudiante);
     }
 
     public void eliminar(Estudiante estudiante) {
-        //Introduce c�digo
+        estudiantes.remove(estudiante);
     }
 
     public Estudiante obtener(int pos) {
-	//Introduce c�digo
+        for (Estudiante estudiante : estudiantes) {
+            return estudiantes.get(pos);
+        }        
         return null;
     }
 
     public Estudiante buscar(int codigo) {
-	//Introduce c�digo        
-	  return null;
+        for (Estudiante estudiante : estudiantes) {
+            if(estudiante.getCodigo() == codigo){
+                return estudiante;
+            }
+        }
+        return null;
     }
 
     public int tamano() {
-        //Introduce c�digo        
-	  return 0;
+        estudiantes.size();        
+	    return 0;
     }
 
     public void listarEstudiantes(){
-        //Introduce c�digo        
+        //Introduce c digo        
     }
 
-    // M�todos para manipular el archivo de texto
+    // M todos para manipular el archivo de texto
     private void readFromInputStream(InputStream inputStream) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(inputStream));
         String linea;
@@ -50,7 +56,7 @@ public class Estudiantes2023 {
         br.close();
     }
 
-	// M�todo que a�adir a los estudiantes del archivo .txt en el arrayList estudiantes.
+	// M todo que a adir a los estudiantes del archivo .txt en el arrayList estudiantes.
     private void createStudent(StringTokenizer st){
         int codigo = Integer.parseInt(st.nextToken().trim());
         String nombre = st.nextToken().trim();
@@ -60,12 +66,12 @@ public class Estudiantes2023 {
         adicionar(estudiante);
     }
 
-    // M�todos para manipular el archivo de texto
+    // M todos para manipular el archivo de texto
     private void cargarArchivo() {
         try {
-            File file = new File("./src/estudiantes.txt");
+            File file = new File("C:\\TRABAJO GRUPAL\\TRABAJO GRUPAL2\\LAB009POOI-2311685\\ejerciciosCalificados04\\estudiantes.txt");
             Class<Estudiantes2023> clazz = Estudiantes2023.class;
-            InputStream inputStream = clazz.getResourceAsStream("/estudiantes.txt");
+            InputStream inputStream = clazz.getResourceAsStream("estudiantes.txt");
             if (file.exists()) {
                 readFromInputStream(inputStream);
             } else
