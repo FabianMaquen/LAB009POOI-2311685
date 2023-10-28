@@ -34,6 +34,40 @@ public class Main {
                 switch (accion) {
                     case 1: 
                         System.out.println("****** REGISTRAR A UN NUEVO ESTUDIANTE ********");
+
+                        String nombre, apellidos, nombre_Y_apellido;
+                        int ciclo;
+                        double pension;
+
+                        try {
+                            System.out.print("INGRESE NOMBRES: ");
+                            cs.nextLine();
+                            nombre = cs.nextLine();
+                            
+                            System.out.print("INGRESE APELLIDOS: ");
+                            apellidos = cs.nextLine();
+
+                            nombre_Y_apellido = nombre + " " + apellidos;
+                            
+                            System.out.print("INGRESE CICLO: ");
+                            ciclo = cs.nextInt();
+                            
+                            System.out.print("INGRESE PENSION: "); 
+                            pension = cs.nextDouble();
+                            
+                            // Crear el código único para el nuevo estudiante
+                            int codigo = estudiantes.tamano() + 101;
+                            
+                            
+                            Estudiante nuevoEstudiante = new Estudiante(codigo, nombre_Y_apellido, ciclo, pension);
+                            estudiantes.adicionar(nuevoEstudiante);
+                            
+                            System.out.println("¡Se añadió con éxito!");
+                            
+                        } catch (Exception e) {
+                            System.out.println("Error al ingresar valores. Asegúrese de ingresar valores válidos.");
+                        }
+                        
                         break;
 
                     case 2: 

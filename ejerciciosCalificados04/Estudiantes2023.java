@@ -14,10 +14,12 @@ public class Estudiantes2023 {
 
     public void adicionar(Estudiante estudiante) {
         estudiantes.add(estudiante);
+        guardarArchivo();
     }
 
     public void eliminar(Estudiante estudiante) {
         estudiantes.remove(estudiante);
+        guardarArchivo();
     }
 
     public Estudiante obtener(int pos) {
@@ -70,7 +72,7 @@ public class Estudiantes2023 {
     // M todos para manipular el archivo de texto
     private void cargarArchivo() {
         try {
-            File file = new File("C:\\Users\\ALFONSO BARRENECHEA\\Desktop\\PROGRAMACIÓN ORIENTADA A OBJETOS - I\\semana 11\\TRABAJO 2\\LAB009POOI-2311685\\ejerciciosCalificados04\\estudiantes.txt");
+            File file = new File("C:\\Users\\Fabian Maquen\\Desktop\\CICLO 02\\POO\\Actividades\\S11\\LAB009POOI-2311685\\ejerciciosCalificados04\\estudiantes.txt");
             Class<Estudiantes2023> clazz = Estudiantes2023.class;
             InputStream inputStream = clazz.getResourceAsStream("estudiantes.txt");
             if (file.exists()) {
@@ -80,6 +82,25 @@ public class Estudiantes2023 {
                         "El archivo estudiantes.txt no existe");
         } catch (Exception x) {
             JOptionPane.showMessageDialog(null, "Se produjo un error= " + x);
+        }
+    }
+
+    private void guardarArchivo() {
+        try {
+            FileWriter fileWriter = new FileWriter("C:\\Users\\Fabian Maquen\\Desktop\\CICLO 02\\POO\\Actividades\\S11\\LAB009POOI-2311685\\ejerciciosCalificados04\\estudiantes.txt");
+            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+    
+            for (Estudiante estudiante : estudiantes) {
+                String linea = estudiante.getCodigo() + "," + estudiante.getNombre() + "," + estudiante.getCiclo() + "," + estudiante.getPension();
+                bufferedWriter.write(linea);
+                bufferedWriter.newLine();
+            }
+    
+            bufferedWriter.close();
+            fileWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Error al guardar el archivo estudiantes.txt");
         }
     }
 }
