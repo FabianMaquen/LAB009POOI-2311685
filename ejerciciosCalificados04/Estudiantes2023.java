@@ -22,12 +22,18 @@ public class Estudiantes2023 {
 
     public Estudiante obtener(int pos) {
 <<<<<<< HEAD
+<<<<<<< HEAD
         for (Estudiante estudiante : estudiantes) {
             return estudiantes.get(pos);
         }        
 =======
         estudiantes.get(pos);
 >>>>>>> 9835f4309d46f5c65d8bab36a46cc05f40e98165
+=======
+        if(pos >= 0 && pos < estudiantes.size()){
+            return estudiantes.get(pos);
+        }
+>>>>>>> 115ae9169beecc019936caf6a0dffbe1740f2ffa
         return null;
     }
 
@@ -44,6 +50,7 @@ public class Estudiantes2023 {
         return null;
     }
 
+<<<<<<< HEAD
     public int tamano() {
 <<<<<<< HEAD
         estudiantes.size();        
@@ -59,6 +66,16 @@ public class Estudiantes2023 {
 =======
         //Introduce codigo        
 >>>>>>> 9835f4309d46f5c65d8bab36a46cc05f40e98165
+=======
+    public int tamano() { 
+	    return estudiantes.size();
+    }
+
+    public void listarEstudiantes(){
+        for (int i = 0; i < estudiantes.size(); i++) {
+            System.out.println((i+1) + ". " + estudiantes.get(i).toString());
+        }
+>>>>>>> 115ae9169beecc019936caf6a0dffbe1740f2ffa
     }
 
     // M todos para manipular el archivo de texto
