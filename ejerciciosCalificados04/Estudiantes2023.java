@@ -48,6 +48,43 @@ public class Estudiantes2023 {
         }
     }
     
+    public Estudiante buscarNombre(String apellidoBuscado) {
+        boolean encontrado = false;
+
+        for (Estudiante estudiante : estudiantes) {
+            String[] nombreYApellido = estudiante.getNombre().split(" ");
+            String apellido = nombreYApellido[nombreYApellido.length - 1];
+
+            if (apellido.equals(apellidoBuscado)) {
+                System.out.println(estudiante.getNombre());
+                encontrado = true;
+            }
+        }
+
+        if (!encontrado) {
+            System.out.println("El alumno no está registrado.");
+        }
+
+        return null;
+    }
+    
+    public void modificarApellidos() {
+        for (Estudiante estudiante : estudiantes) {
+            String nombreCompleto = estudiante.getNombre();
+            String[] dividirNombre = nombreCompleto.split(" ");
+        
+            if (dividirNombre.length >= 2) {
+                String nombre = dividirNombre[0];
+                String apellido = dividirNombre[1];
+                
+                char primeraLetraApellido = Character.toUpperCase(apellido.charAt(0));
+                apellido = primeraLetraApellido + apellido.substring(1);
+        
+                estudiante.setNombre(nombre + " " + apellido);
+            }
+        }
+    }
+    
     // M todos para manipular el archivo de texto
     private void readFromInputStream(InputStream inputStream) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(inputStream));
@@ -69,21 +106,9 @@ public class Estudiantes2023 {
         Estudiante estudiante = new Estudiante(codigo, nombre, ciclo, pension);
         adicionar(estudiante);
     }
-    public Estudiante buscarNombre(String nombre) {
-        for (Estudiante estudiante : estudiantes) {
-            String nombreEstudiante = estudiante.getNombre();
-            String[] partesNombre = nombreEstudiante.split(" ");
-            
-            if (partesNombre.length >= 2) {
-                String nombreCompleto = partesNombre[0] + " " + partesNombre[1];
-                if (nombreCompleto.equalsIgnoreCase(nombre)) {
-                    return estudiante;
-                }
-            }
-        }
-        return null;
-    }
-    
+
+
+
     // M todos para manipular el archivo de texto
     private void cargarArchivo() {
         try {
@@ -99,24 +124,6 @@ public class Estudiantes2023 {
             JOptionPane.showMessageDialog(null, "Se produjo un error= " + x);
         }
     }
-
-    public void modificarApellidos() {
-        for (Estudiante estudiante : estudiantes) {
-            String nombreCompleto = estudiante.getNombre();
-            String[] dividirNombre = nombreCompleto.split(" ");
-        
-            if (dividirNombre.length >= 2) {
-                String nombre = dividirNombre[0];
-                String apellido = dividirNombre[1];
-                
-                char primeraLetraApellido = Character.toUpperCase(apellido.charAt(0));
-                apellido = primeraLetraApellido + apellido.substring(1);
-        
-                estudiante.setNombre(nombre + " " + apellido);
-            }
-        }
-    }
-
 
     private void guardarArchivo() {
 
