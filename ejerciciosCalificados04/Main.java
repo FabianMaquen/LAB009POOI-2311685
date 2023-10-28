@@ -69,11 +69,25 @@ public class Main {
                         } catch (Exception e) {
                             System.out.println("Error al ingresar valores. Asegúrese de ingresar valores válidos.");
                         }
+                        break;
 
                     case 2:
                         break;
 
                     case 3: 
+                        // Imprimiendo lista
+                        System.out.println("****** ELIMINACIÓN DEL ESTUDIANTE ********");
+                        System.out.println("-----------------------------------------------------------------------------------");
+                        System.out.printf("%-30s%-30s%-10s%s%n", "CODIGO DE ESTUDIANTE", "NOMBRE Y APELLIDO", "CICLO", "PENSION");
+                        System.out.println("-----------------------------------------------------------------------------------");
+                        estudiantes.listarEstudiantes();
+                        System.out.println("-----------------------------------------------------------------------------------");
+                        System.out.println("INDIQUE EL CODIGO DEL ESTUDIANTE A ELIMINAR:");
+                        // Código del estudiante a eliminar
+                        int codigo=cs.nextInt();
+                        Estudiante eliminarEstudiante = estudiantes.buscar(codigo);
+                        estudiantes.eliminar(eliminarEstudiante);
+                        System.out.println("¡Se eliminó con éxito!");
                         break;
 
                     case 4: 
@@ -109,19 +123,19 @@ public class Main {
                         break;
 
                     case 5: 
-                    System.out.println("-----------------------------------------------------------------------------------");
-                    System.out.printf("%-30s%-30s%-10s%s%n", "CODIGO DE ESTUDIANTE", "NOMBRE Y APELLIDO", "CICLO", "PENSION");
-                    System.out.println("-----------------------------------------------------------------------------------");
-                    estudiantes.listarEstudiantes();
-                    System.out.println("-----------------------------------------------------------------------------------");
-                    
-                    estudiantes.modificarApellidos();
-                    System.out.println("LA NUEVA LISTA:");
-                    System.out.println("-----------------------------------------------------------------------------------");
-                    System.out.printf("%-30s%-30s%-10s%s%n", "CODIGO DE ESTUDIANTE", "NOMBRE Y APELLIDO", "CICLO", "PENSION");
-                    System.out.println("-----------------------------------------------------------------------------------");
-                    estudiantes.listarEstudiantes();
-                    System.out.println("-----------------------------------------------------------------------------------");
+                        System.out.println("-----------------------------------------------------------------------------------");
+                        System.out.printf("%-30s%-30s%-10s%s%n", "CODIGO DE ESTUDIANTE", "NOMBRE Y APELLIDO", "CICLO", "PENSION");
+                        System.out.println("-----------------------------------------------------------------------------------");
+                        estudiantes.listarEstudiantes();
+                        System.out.println("-----------------------------------------------------------------------------------");
+                        
+                        estudiantes.modificarApellidos();
+                        System.out.println("LA NUEVA LISTA:");
+                        System.out.println("-----------------------------------------------------------------------------------");
+                        System.out.printf("%-30s%-30s%-10s%s%n", "CODIGO DE ESTUDIANTE", "NOMBRE Y APELLIDO", "CICLO", "PENSION");
+                        System.out.println("-----------------------------------------------------------------------------------");
+                        estudiantes.listarEstudiantes();
+                        System.out.println("-----------------------------------------------------------------------------------");
                         break;
 
                     case 6:
