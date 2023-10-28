@@ -72,7 +72,7 @@ public class Estudiantes2023 {
     // M todos para manipular el archivo de texto
     private void cargarArchivo() {
         try {
-            File file = new File("C:\\Users\\Fabian Maquen\\Desktop\\CICLO 02\\POO\\Actividades\\S11\\LAB009POOI-2311685\\ejerciciosCalificados04\\estudiantes.txt");
+            File file = new File("C:\\Users\\ALFONSO BARRENECHEA\\Desktop\\PROGRAMACIÓN ORIENTADA A OBJETOS - I\\semana 11\\TRABAJO 2\\LAB009POOI-2311685\\ejerciciosCalificados04\\estudiantes.txt");
             Class<Estudiantes2023> clazz = Estudiantes2023.class;
             InputStream inputStream = clazz.getResourceAsStream("estudiantes.txt");
             if (file.exists()) {
@@ -87,7 +87,7 @@ public class Estudiantes2023 {
 
     private void guardarArchivo() {
         try {
-            FileWriter fileWriter = new FileWriter("C:\\Users\\Fabian Maquen\\Desktop\\CICLO 02\\POO\\Actividades\\S11\\LAB009POOI-2311685\\ejerciciosCalificados04\\estudiantes.txt");
+            FileWriter fileWriter = new FileWriter("C:\\Users\\ALFONSO BARRENECHEA\\Desktop\\PROGRAMACIÓN ORIENTADA A OBJETOS - I\\semana 11\\TRABAJO 2\\LAB009POOI-2311685\\ejerciciosCalificados04\\estudiantes.txt");
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
     
             for (Estudiante estudiante : estudiantes) {
