@@ -72,11 +72,12 @@ public class Estudiantes2023 {
     }
 
     public void listarEstudiantes(){
-        for (int i = 0; i < estudiantes.size(); i++) {
-            System.out.println((i+1) + ". " + estudiantes.get(i).toString());
+        for (Estudiante estudiante : estudiantes) {
+            System.out.printf("%-30d%-30s%-10d%.2f%n", estudiante.getCodigo(), estudiante.getNombre(), estudiante.getCiclo(), estudiante.getPension());
         }
 >>>>>>> 115ae9169beecc019936caf6a0dffbe1740f2ffa
     }
+    
 
     // M todos para manipular el archivo de texto
     private void readFromInputStream(InputStream inputStream) throws IOException {
