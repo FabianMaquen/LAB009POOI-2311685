@@ -1,7 +1,7 @@
 package ejerciciosCalificados04;
+
 import java.util.*;
 import javax.swing.*;
-
 import java.io.*;
 
 public class Estudiantes2023 {
@@ -21,15 +21,23 @@ public class Estudiantes2023 {
     }
 
     public Estudiante obtener(int pos) {
+<<<<<<< HEAD
         for (Estudiante estudiante : estudiantes) {
             return estudiantes.get(pos);
         }        
+=======
+        estudiantes.get(pos);
+>>>>>>> 9835f4309d46f5c65d8bab36a46cc05f40e98165
         return null;
     }
 
     public Estudiante buscar(int codigo) {
         for (Estudiante estudiante : estudiantes) {
+<<<<<<< HEAD
             if(estudiante.getCodigo() == codigo){
+=======
+            if (estudiante.getCodigo() == codigo) {
+>>>>>>> 9835f4309d46f5c65d8bab36a46cc05f40e98165
                 return estudiante;
             }
         }
@@ -37,12 +45,20 @@ public class Estudiantes2023 {
     }
 
     public int tamano() {
+<<<<<<< HEAD
         estudiantes.size();        
+=======
+        //Introduce codigog   
+>>>>>>> 9835f4309d46f5c65d8bab36a46cc05f40e98165
 	    return 0;
     }
 
     public void listarEstudiantes(){
+<<<<<<< HEAD
         //Introduce c digo        
+=======
+        //Introduce codigo        
+>>>>>>> 9835f4309d46f5c65d8bab36a46cc05f40e98165
     }
 
     // M todos para manipular el archivo de texto
@@ -69,7 +85,11 @@ public class Estudiantes2023 {
     // M todos para manipular el archivo de texto
     private void cargarArchivo() {
         try {
+<<<<<<< HEAD
             File file = new File("C:\\TRABAJO GRUPAL\\TRABAJO GRUPAL2\\LAB009POOI-2311685\\ejerciciosCalificados04\\estudiantes.txt");
+=======
+            File file = new File("C:\\Users\\Fabian Maquen\\Desktop\\CICLO 02\\POO\\Actividades\\S11\\LAB009POOI-2311685\\ejerciciosCalificados04\\estudiantes.txt");
+>>>>>>> 9835f4309d46f5c65d8bab36a46cc05f40e98165
             Class<Estudiantes2023> clazz = Estudiantes2023.class;
             InputStream inputStream = clazz.getResourceAsStream("estudiantes.txt");
             if (file.exists()) {
