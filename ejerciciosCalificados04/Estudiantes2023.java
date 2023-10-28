@@ -47,7 +47,7 @@ public class Estudiantes2023 {
             System.out.printf("%-30d%-30s%-10d%.2f%n", estudiante.getCodigo(), estudiante.getNombre(), estudiante.getCiclo(), estudiante.getPension());
         }
     }
-    
+
     public Estudiante buscarNombre(String apellidoBuscado) {
         boolean encontrado = false;
 
@@ -84,6 +84,56 @@ public class Estudiantes2023 {
             }
         }
     }
+
+    public void listarPensionEstudiante() {
+        Collections.sort(estudiantes, new Comparator<Estudiante>() {
+            @Override
+            public int compare(Estudiante estudiante1, Estudiante estudiante2) {
+                return Double.compare(estudiante1.getPension(), estudiante2.getPension());
+            }
+        });
+
+        System.out.println("-----------------------------------------------------------------------------------");
+        System.out.printf("%-30s%-30s%-10s%s%n", "CODIGO DE ESTUDIANTE", "NOMBRE Y APELLIDO", "CICLO", "PENSION");
+        System.out.println("-----------------------------------------------------------------------------------");
+        
+        for (Estudiante estudiante : estudiantes) {
+            System.out.printf("%-30d%-30s%-10d%.2f%n", estudiante.getCodigo(), estudiante.getNombre(), estudiante.getCiclo(), estudiante.getPension());
+        }
+
+        System.out.println("-----------------------------------------------------------------------------------");
+    }
+
+    public void listarNombresEstudiantes() {
+        System.out.println("****** LISTA DE NOMBRES DE ESTUDIANTES ********");
+        System.out.println("-----------------------------------------------------------------------------------");
+        System.out.printf("%-30s%-30s%-10s%s%n", "CODIGO DE ESTUDIANTE", "NOMBRE Y APELLIDO", "CICLO", "PENSION");
+        System.out.println("-----------------------------------------------------------------------------------");
+    
+        for (Estudiante estudiante : estudiantes) {
+            String[] nombreYApellido = estudiante.getNombre().split(" ");
+            String nombre = nombreYApellido[0];
+            System.out.printf("%-30d%-30s%-10d%.2f%n", estudiante.getCodigo(), nombre, estudiante.getCiclo(), estudiante.getPension());
+            
+        }
+    
+        System.out.println("-----------------------------------------------------------------------------------");
+    }
+
+    public void listarApellidosEstudiantes() {
+        System.out.println("****** LISTA DE ESTUDIANTES ********");
+        System.out.println("-----------------------------------------------------------------------------------");
+        System.out.printf("%-30s%-30s%-10s%s%n", "CODIGO DE ESTUDIANTE", "NOMBRE Y APELLIDO", "CICLO", "PENSION");
+        System.out.println("-----------------------------------------------------------------------------------");
+
+        for (Estudiante estudiante : estudiantes) {
+            String[] nombreYApellido = estudiante.getNombre().split(" ");
+            String apellido = nombreYApellido[nombreYApellido.length - 1];
+            System.out.printf("%-30d%-30s%-10d%.2f%n", estudiante.getCodigo(), apellido, estudiante.getCiclo(), estudiante.getPension());
+        }
+
+        System.out.println("-----------------------------------------------------------------------------------");
+    }
     
     // M todos para manipular el archivo de texto
     private void readFromInputStream(InputStream inputStream) throws IOException {
@@ -112,7 +162,7 @@ public class Estudiantes2023 {
     // M todos para manipular el archivo de texto
     private void cargarArchivo() {
         try {
-            File file = new File("C:\\TRABAJO GRUPAL\\TRABAJO GRUPAL2\\LAB009POOI-2311685\\ejerciciosCalificados04\\estudiantes.txt");
+            File file = new File("C:\\Users\\Fabian Maquen\\Desktop\\CICLO 02\\POO\\Actividades\\S11\\LAB009POOI-2311685\\ejerciciosCalificados04\\estudiantes.txt");
             Class<Estudiantes2023> clazz = Estudiantes2023.class;
             InputStream inputStream = clazz.getResourceAsStream("estudiantes.txt");
             if (file.exists()) {
@@ -128,7 +178,7 @@ public class Estudiantes2023 {
     private void guardarArchivo() {
 
         try {
-            FileWriter fileWriter = new FileWriter("C:\\Users\\ALFONSO BARRENECHEA\\Desktop\\PROGRAMACIÓN ORIENTADA A OBJETOS - I\\semana 11\\TRABAJO 2\\LAB009POOI-2311685\\ejerciciosCalificados04\\estudiantes.txt");
+            FileWriter fileWriter = new FileWriter("C:\\Users\\Fabian Maquen\\Desktop\\CICLO 02\\POO\\Actividades\\S11\\LAB009POOI-2311685\\ejerciciosCalificados04\\estudiantes.txt");
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
             
             for (Estudiante estudiante : estudiantes) {

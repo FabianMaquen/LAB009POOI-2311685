@@ -10,21 +10,38 @@ public class Main {
         Estudiantes2023 estudiantes = new Estudiantes2023();
         
 
-        System.out.print("** BIENVENIDOS AL SISTEMA DE GESTION DE ESTUDIANTES **\n");
+        System.out.print("\n** BIENVENIDOS AL SISTEMA DE GESTION DE ESTUDIANTES **\n");
+
         try {
-            
+            int contador = 1;
+
             do {
-                System.out.print("1-NUEVO ESTUDIANTE\n" +
-                "2-BUSCAR ESTUDIANTE\n" +
-                "3-ELIMINAR ESTUDIANTE\n" +
-                "4-MODIFICAR ESTUDIANTE\n" +
-                "5-MODIFICAR APELLIDOS EN MINÚSCULAS.\n" +
-                "6-VER TODOS LOS ESTUDIANTES\n" +
-                "7-VER TODOS LOS ESTUDIANTES POR APELLIDOS\n" +
-                "8-VER TODOS LOS ESTUDIANTES POR PENSIÓN\n" +
-                "9-TOTAL DE PENSIONES\n" +
-                "10-SALIR\n" + 
-                "    ¿QUÉ ACTIVIDAD DESEA EJECUTAR?\n");
+                if (contador == 1) {
+                    System.out.print("1-NUEVO ESTUDIANTE\n" +
+                    "2-BUSCAR ESTUDIANTE\n" +
+                    "3-ELIMINAR ESTUDIANTE\n" +
+                    "4-MODIFICAR ESTUDIANTE\n" +
+                    "5-MODIFICAR APELLIDOS EN MINÚSCULAS.\n" +
+                    "6-VER TODOS LOS ESTUDIANTES\n" +
+                    "7-VER TODOS LOS ESTUDIANTES POR APELLIDOS\n" +
+                    "8-VER TODOS LOS ESTUDIANTES POR PENSIÓN\n" +
+                    "9-TOTAL DE PENSIONES\n" +
+                    "10-SALIR\n" + 
+                    "\n\n¿QUÉ ACTIVIDAD DESEA EJECUTAR?\n\n");
+                    contador++;
+                } else{
+                    System.out.println("\n\n¿DESEA INGRESAR OTRA OPCIÓN?\n");
+                    System.out.print("1-NUEVO ESTUDIANTE\n" +
+                    "2-BUSCAR ESTUDIANTE\n" +
+                    "3-ELIMINAR ESTUDIANTE\n" +
+                    "4-MODIFICAR ESTUDIANTE\n" +
+                    "5-MODIFICAR APELLIDOS EN MINÚSCULAS.\n" +
+                    "6-VER TODOS LOS ESTUDIANTES\n" +
+                    "7-VER TODOS LOS ESTUDIANTES POR APELLIDOS\n" +
+                    "8-VER TODOS LOS ESTUDIANTES POR PENSIÓN\n" +
+                    "9-TOTAL DE PENSIONES\n" +
+                    "10-SALIR\n\n\n");
+                }
                 
                 accion = cs.nextInt();
                 while (accion<=0 || accion >10 ) {
@@ -69,7 +86,7 @@ public class Main {
                         } catch (Exception e) {
                             System.out.println("Error al ingresar valores. Asegúrese de ingresar valores válidos.");
                         }
-                        
+
                         break;
 
                     case 2:
@@ -183,18 +200,16 @@ public class Main {
                         break;
 
                     case 6:
-                        System.out.println("-----------------------------------------------------------------------------------");
-                        System.out.printf("%-30s%-30s%-10s%s%n", "CODIGO DE ESTUDIANTE", "NOMBRE Y APELLIDO", "CICLO", "PENSION");
-                        System.out.println("-----------------------------------------------------------------------------------");
-                        estudiantes.listarEstudiantes();
-                        System.out.println("-----------------------------------------------------------------------------------");
-
+                        estudiantes.listarNombresEstudiantes();
                         break;
 
-                    case 7: 
+                    case 7:
+                        estudiantes.listarApellidosEstudiantes();
                         break;
 
                     case 8: 
+                        System.out.println("Estudiantes ordenados por pensión:");
+                        estudiantes.listarPensionEstudiante();
                         break;
 
                     case 9:
@@ -217,7 +232,7 @@ public class Main {
                     default:
                         break;
                 } 
-            } while (accion>0 || accion <9);    
+            } while (accion > 0 && accion < 10);
         } catch (Exception e) {
             System.out.println("ERROR! ");
         }
