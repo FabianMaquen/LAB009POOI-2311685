@@ -31,7 +31,9 @@ public class Main {
                     System.out.println("Ingresa nuevamente un valor valido: ");
                     accion=cs.nextInt();
                 }
+
                 switch (accion) {
+                    
                     case 1: 
                         System.out.println("****** REGISTRAR A UN NUEVO ESTUDIANTE ********");
 
@@ -132,7 +134,7 @@ public class Main {
 
                     case 7: 
                         break;
-                        
+
                     case 8: 
                         break;
 

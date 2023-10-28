@@ -1,5 +1,5 @@
-100,Ana Gabriel,5,1200.0
-101,Josel Toro,6,1000.0
+100,Ana gabriel,5,1200.0
+101,Josel toro,6,1000.0
 102,Osvaldo Chauca,4,1200.0
 104,Tatiana Rojas,5,1200.0
 105,Alex Rojas,5,1200.0

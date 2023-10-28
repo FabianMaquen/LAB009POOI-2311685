@@ -58,7 +58,8 @@ public class Estudiantes2023 {
         }
         br.close();
     }
-
+    
+    
 	// M todo que a adir a los estudiantes del archivo .txt en el arrayList estudiantes.
     private void createStudent(StringTokenizer st){
         int codigo = Integer.parseInt(st.nextToken().trim());
@@ -68,11 +69,25 @@ public class Estudiantes2023 {
         Estudiante estudiante = new Estudiante(codigo, nombre, ciclo, pension);
         adicionar(estudiante);
     }
-
+    public Estudiante buscarNombre(String nombre) {
+        for (Estudiante estudiante : estudiantes) {
+            String nombreEstudiante = estudiante.getNombre();
+            String[] partesNombre = nombreEstudiante.split(" ");
+            
+            if (partesNombre.length >= 2) {
+                String nombreCompleto = partesNombre[0] + " " + partesNombre[1];
+                if (nombreCompleto.equalsIgnoreCase(nombre)) {
+                    return estudiante;
+                }
+            }
+        }
+        return null;
+    }
+    
     // M todos para manipular el archivo de texto
     private void cargarArchivo() {
         try {
-            File file = new File("C:\\Users\\ALFONSO BARRENECHEA\\Desktop\\PROGRAMACIÓN ORIENTADA A OBJETOS - I\\semana 11\\TRABAJO 2\\LAB009POOI-2311685\\ejerciciosCalificados04\\estudiantes.txt");
+            File file = new File("C:\\TRABAJO GRUPAL\\TRABAJO GRUPAL2\\LAB009POOI-2311685\\ejerciciosCalificados04\\estudiantes.txt");
             Class<Estudiantes2023> clazz = Estudiantes2023.class;
             InputStream inputStream = clazz.getResourceAsStream("estudiantes.txt");
             if (file.exists()) {
@@ -85,17 +100,36 @@ public class Estudiantes2023 {
         }
     }
 
+    public void modificarApellidos() {
+        for (Estudiante estudiante : estudiantes) {
+            String nombreCompleto = estudiante.getNombre();
+            String[] dividirNombre = nombreCompleto.split(" ");
+        
+            if (dividirNombre.length >= 2) {
+                String nombre = dividirNombre[0];
+                String apellido = dividirNombre[1];
+                
+                char primeraLetraApellido = Character.toUpperCase(apellido.charAt(0));
+                apellido = primeraLetraApellido + apellido.substring(1);
+        
+                estudiante.setNombre(nombre + " " + apellido);
+            }
+        }
+    }
+
+
     private void guardarArchivo() {
+
         try {
             FileWriter fileWriter = new FileWriter("C:\\Users\\ALFONSO BARRENECHEA\\Desktop\\PROGRAMACIÓN ORIENTADA A OBJETOS - I\\semana 11\\TRABAJO 2\\LAB009POOI-2311685\\ejerciciosCalificados04\\estudiantes.txt");
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-    
+            
             for (Estudiante estudiante : estudiantes) {
                 String linea = estudiante.getCodigo() + "," + estudiante.getNombre() + "," + estudiante.getCiclo() + "," + estudiante.getPension();
                 bufferedWriter.write(linea);
                 bufferedWriter.newLine();
             }
-    
+            
             bufferedWriter.close();
             fileWriter.close();
         } catch (IOException e) {
@@ -103,4 +137,5 @@ public class Estudiantes2023 {
             JOptionPane.showMessageDialog(null, "Error al guardar el archivo estudiantes.txt");
         }
     }
+    
 }
