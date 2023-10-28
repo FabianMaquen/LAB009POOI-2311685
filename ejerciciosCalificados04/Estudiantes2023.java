@@ -1,7 +1,7 @@
 package ejerciciosCalificados04;
+
 import java.util.*;
 import javax.swing.*;
-
 import java.io.*;
 
 public class Estudiantes2023 {
@@ -13,33 +13,32 @@ public class Estudiantes2023 {
     }
 
     public void adicionar(Estudiante estudiante) {
-        //Introduce c�digo
+        estudiantes.add(estudiante);
     }
 
     public void eliminar(Estudiante estudiante) {
-        //Introduce c�digo
+        estudiantes.remove(estudiante);
     }
 
     public Estudiante obtener(int pos) {
-	//Introduce c�digo
+        estudiantes.get(pos);
         return null;
     }
 
     public Estudiante buscar(int codigo) {
-	//Introduce c�digo        
-	  return null;
+        return null;
     }
 
     public int tamano() {
-        //Introduce c�digo        
-	  return 0;
+        estudiantes.size();        
+	    return 0;
     }
 
     public void listarEstudiantes(){
-        //Introduce c�digo        
+        //Introduce c digo        
     }
 
-    // M�todos para manipular el archivo de texto
+    // M todos para manipular el archivo de texto
     private void readFromInputStream(InputStream inputStream) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(inputStream));
         String linea;
@@ -50,7 +49,7 @@ public class Estudiantes2023 {
         br.close();
     }
 
-	// M�todo que a�adir a los estudiantes del archivo .txt en el arrayList estudiantes.
+	// M todo que a adir a los estudiantes del archivo .txt en el arrayList estudiantes.
     private void createStudent(StringTokenizer st){
         int codigo = Integer.parseInt(st.nextToken().trim());
         String nombre = st.nextToken().trim();
@@ -60,7 +59,7 @@ public class Estudiantes2023 {
         adicionar(estudiante);
     }
 
-    // M�todos para manipular el archivo de texto
+    // M todos para manipular el archivo de texto
     private void cargarArchivo() {
         try {
             File file = new File("./src/estudiantes.txt");
