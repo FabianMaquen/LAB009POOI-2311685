@@ -21,22 +21,31 @@ public class Estudiantes2023 {
     }
 
     public Estudiante obtener(int pos) {
-        estudiantes.get(pos);
+        if(pos >= 0 && pos < estudiantes.size()){
+            return estudiantes.get(pos);
+        }
         return null;
     }
 
     public Estudiante buscar(int codigo) {
+        for (Estudiante estudiante : estudiantes) {
+            if (estudiante.getCodigo() == codigo) {
+                return estudiante;
+            }
+        }
         return null;
     }
 
-    public int tamano() {
-        estudiantes.size();        
-	    return 0;
+    public int tamano() { 
+	    return estudiantes.size();
     }
 
     public void listarEstudiantes(){
-        //Introduce c digo        
+        for (Estudiante estudiante : estudiantes) {
+            System.out.printf("%-30d%-30s%-10d%.2f%n", estudiante.getCodigo(), estudiante.getNombre(), estudiante.getCiclo(), estudiante.getPension());
+        }
     }
+    
 
     // M todos para manipular el archivo de texto
     private void readFromInputStream(InputStream inputStream) throws IOException {
