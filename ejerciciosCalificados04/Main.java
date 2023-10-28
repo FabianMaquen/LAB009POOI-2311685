@@ -69,6 +69,7 @@ public class Main {
                         } catch (Exception e) {
                             System.out.println("Error al ingresar valores. Asegúrese de ingresar valores válidos.");
                         }
+                        
                         break;
 
                     case 2:
@@ -187,7 +188,7 @@ public class Main {
                         System.out.println("-----------------------------------------------------------------------------------");
                         estudiantes.listarEstudiantes();
                         System.out.println("-----------------------------------------------------------------------------------");
-                        
+
                         break;
 
                     case 7: 
