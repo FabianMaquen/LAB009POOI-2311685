@@ -21,7 +21,9 @@ public class Estudiantes2023 {
     }
 
     public Estudiante obtener(int pos) {
-        estudiantes.get(pos);
+        if(pos >= 0 && pos < estudiantes.size()){
+            return estudiantes.get(pos);
+        }
         return null;
     }
 
@@ -34,13 +36,14 @@ public class Estudiantes2023 {
         return null;
     }
 
-    public int tamano() {
-        //Introduce codigog   
-	    return 0;
+    public int tamano() { 
+	    return estudiantes.size();
     }
 
     public void listarEstudiantes(){
-        //Introduce codigo        
+        for (int i = 0; i < estudiantes.size(); i++) {
+            System.out.println((i+1) + ". " + estudiantes.get(i).toString());
+        }
     }
 
     // M todos para manipular el archivo de texto
