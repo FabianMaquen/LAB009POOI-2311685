@@ -69,13 +69,13 @@ public class Main {
                         }
 
                     case 2:
-
                         break;
 
                     case 3: 
                         break;
 
                     case 4: 
+
                         System.out.println("****** MODIFICACIÓN  DE ESTUDIANTE ********");
                         System.out.println("-----------------------------------------------------------------------------------");
                         System.out.printf("%-30s%-30s%-10s%s%n", "CODIGO DE ESTUDIANTE", "NOMBRE Y APELLIDO", "CICLO", "PENSION");
@@ -105,8 +105,23 @@ public class Main {
                         System.out.println("¡Se modificó con éxito!");
                         estudiantes.listarEstudiantes();
                         break;
+
                     case 5: 
+                    System.out.println("-----------------------------------------------------------------------------------");
+                    System.out.printf("%-30s%-30s%-10s%s%n", "CODIGO DE ESTUDIANTE", "NOMBRE Y APELLIDO", "CICLO", "PENSION");
+                    System.out.println("-----------------------------------------------------------------------------------");
+                    estudiantes.listarEstudiantes();
+                    System.out.println("-----------------------------------------------------------------------------------");
+                    
+                    estudiantes.modificarApellidos();
+                    System.out.println("LA NUEVA LISTA:");
+                    System.out.println("-----------------------------------------------------------------------------------");
+                    System.out.printf("%-30s%-30s%-10s%s%n", "CODIGO DE ESTUDIANTE", "NOMBRE Y APELLIDO", "CICLO", "PENSION");
+                    System.out.println("-----------------------------------------------------------------------------------");
+                    estudiantes.listarEstudiantes();
+                    System.out.println("-----------------------------------------------------------------------------------");
                         break;
+
                     case 6:
                         System.out.println("-----------------------------------------------------------------------------------");
                         System.out.printf("%-30s%-30s%-10s%s%n", "CODIGO DE ESTUDIANTE", "NOMBRE Y APELLIDO", "CICLO", "PENSION");
@@ -114,8 +129,10 @@ public class Main {
                         estudiantes.listarEstudiantes();
                         System.out.println("-----------------------------------------------------------------------------------");
                         break;
+
                     case 7: 
                         break;
+                        
                     case 8: 
                         break;
 
