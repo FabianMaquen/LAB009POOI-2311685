@@ -4,11 +4,11 @@ package ejerciciosCalificados04;
 
 import java.util.Scanner; 
 public class Main {
+    private static final Scanner cs = new Scanner(System.in);
     public static void main(String[] args) {
         int accion; 
         Estudiantes2023 estudiantes = new Estudiantes2023();
-        //estudiantes.listarEstudiantes();
-        Scanner cs = new Scanner(System.in);
+        
 
         System.out.print("****** BIENVENIDOS AL SISTEMA DE GESTION DE ESTUDIANTES ******\n");
         try {
@@ -44,7 +44,12 @@ public class Main {
                         break;
                     case 5: 
                         break;
-                    case 6: 
+                    case 6:
+                        System.out.println("-----------------------------------------------------------------------------------");
+                        System.out.printf("%-30s%-30s%-10s%s%n", "CODIGO DE ESTUDIANTE", "NOMBRE Y APELLIDO", "CICLO", "PENSION");
+                        System.out.println("-----------------------------------------------------------------------------------");
+                        estudiantes.listarEstudiantes();
+                        System.out.println("-----------------------------------------------------------------------------------");
                         break;
                     case 7: 
                         break;
@@ -59,6 +64,5 @@ public class Main {
         } catch (Exception e) {
             System.out.println("ERROR! ");
         }
-        cs.close();
     }
 }
